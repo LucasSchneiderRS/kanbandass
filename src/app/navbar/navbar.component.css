@@ -1,0 +1,43 @@
+
+.login {
+    display: inline-flex;
+    width: 400px;
+    float: right;
+    text-align: center;
+    justify-content: center;
+    height: 40px;
+    padding-top: 20px;
+    color: #ACB4DF;
+    
+}
+
+.item {
+    height: 40px;
+    display: inline-flex;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    vertical-align: baseline;
+    padding-top: 20px;
+    color: #ACB4DF;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #3F51B5;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.semlogin {
+    background-color: red;
+}
+
+.btn {
+    margin-top: -10px;
+    background-color: #3F51B5;
+    border-radius: 10px;
+    padding: 10px;
+    height: 20px;
+}
+

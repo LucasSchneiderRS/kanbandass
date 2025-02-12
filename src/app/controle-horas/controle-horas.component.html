@@ -1,0 +1,38 @@
+
+
+<form>
+    <label for="browser" class="form-label tarefa">Responsável:</label>
+    <select class="form-select form-select-lg tarefa" [formControl]="responsavel">
+      <option></option>
+      <option *ngFor="let equipe of listaEquipe">{{equipe}}</option>
+    </select>
+
+
+<div class="mb-3 mt-3 tarefa">
+    <label class="form-label-lg">Horas:</label>
+    <input class="form-control" placeholder="Horas" [formControl]="horas">
+</div>
+
+</form>
+
+<button class="buttonHoras" mat-raised-button (click)="adicionarHoras()" color="primary">Adicionar Horas</button>
+
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Pessoa</th>
+        <th>Horas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let horas of listaHoras">
+        <td>{{horas.data | date:'d/M/yy'}}</td>
+        <td>{{horas.responsavel}}</td>
+        <td>{{horas.horas }}</td>
+      </tr>
+    </tbody>
+</table>
+
+<h2>Horas Totais:  {{horasTotais}} Horas</h2>

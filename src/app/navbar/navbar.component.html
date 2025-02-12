@@ -1,0 +1,8 @@
+<div class="navbar">
+  <div class="item" (click)="goListaProjetos()">Lista de Projetos</div>
+  <div class="item" (click)="goNovoProjeto()">Novo Projeto</div>
+  <div class="login" (click)="login()" [ngClass]="{'semlogin': fezlogin == false}"><div class="btn">{{userText}}</div></div>
+</div>
+
+
+  <router-outlet *ngIf="userText!='Fazer Login'"></router-outlet>

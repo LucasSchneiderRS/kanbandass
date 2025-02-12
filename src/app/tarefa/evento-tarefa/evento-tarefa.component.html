@@ -1,0 +1,20 @@
+<label for="comment" class="tarefa escrita">Descrição:</label>
+<textarea class="form-control tarefa" rows="3" id="comment" name="text" [formControl]="descricao"></textarea>
+
+<button class="button" mat-raised-button (click)="gravaEvento()" color="primary">Gravar Evento</button>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Evento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of listaEventos">
+        <td>{{evento.data | date:'d/M/yy'}}</td>
+        <td>{{evento.descricao}}</td>
+        
+      </tr>
+    </tbody>
+</table>

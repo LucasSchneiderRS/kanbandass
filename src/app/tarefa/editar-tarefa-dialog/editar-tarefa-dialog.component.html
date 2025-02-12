@@ -1,0 +1,16 @@
+<body>
+<H2>Nome Tarefa: </H2>
+<H2>{{dados.tarefa.nomeTarefa}}</H2>
+
+<p>Responsável: {{dados.tarefa.responsavel}}</p>
+
+<p>Descrição: {{dados.tarefa.descricao}}</p>
+
+<p>Data Entrega: {{dados.tarefa.dataEntrega | date: 'dd/MM/yy'}}</p>
+
+<p>Data Criação: {{dados.tarefa.dataCriacao | date: 'dd/MM/yy'}}</p>
+
+<button id='btn1' mat-raised-button color="primary" (click) = "editarTarefa()">Editar</button>
+<button id='btn1' mat-raised-button color="primary" (click) = "eventosTarefa()">Eventos</button>
+<button mat-raised-button color="primary" (click) = "excluirTarefa()">{{excluir}}</button>
+</body>

@@ -1,0 +1,16 @@
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+textarea {
+    width: 95%;
+    margin-left: 10px;
+}
+
+label {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}

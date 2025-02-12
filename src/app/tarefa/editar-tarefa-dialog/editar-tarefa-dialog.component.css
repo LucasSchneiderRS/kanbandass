@@ -1,0 +1,17 @@
+:host {
+    display: block;
+    background: rgb(187, 53, 53);
+    border-radius: 20px;
+    
+}
+
+
+body {
+    width: 500px;
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+}
+

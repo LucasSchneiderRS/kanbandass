@@ -1,0 +1,80 @@
+<mat-form-field id="prio" appearance = "fill">
+  <mat-label for="prioridade1">Prioridade:</mat-label>
+  <mat-select  [formControl]="prioridade1" (selectionChange)="selectChange()">
+      <mat-option value=""></mat-option>
+      <mat-option value="Baixa">Baixa</mat-option>
+      <mat-option value="Media">Media</mat-option>
+      <mat-option value="Alta">Alta</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class= "status" appearance = "fill">
+  <mat-label for="status">Status:</mat-label>
+  <mat-select  [formControl]="status" (selectionChange)="selectChange()">
+      <mat-option value=""></mat-option>
+      <mat-option value="Ativo">Ativo</mat-option>
+      <mat-option value="StandBy">StandBy</mat-option>
+      <mat-option value="Concluido">Concluido</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<table mat-table  [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <ng-container matColumnDef="codigo" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+    <td mat-cell *matCellDef="let projeto"> {{projeto.codigo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="prioridade2" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Prioridade
+    </th>
+    <td mat-cell *matCellDef="let projeto"> {{projeto.prioridade}} </td>
+  </ng-container>
+
+  <ng-container  matColumnDef="nomeProjeto" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Lista de Projetos</th>
+    <td mat-cell *matCellDef="let projeto" id="coluna1"> 
+        <button id="bt" mat-raised-button color="primary" (click)="selecionaProjeto(projeto.nomeProjeto)" >{{projeto.nomeProjeto}}</button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="image" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagem </th>
+    <td mat-cell *matCellDef="let projeto"> <img [src]='getJpgNomeProjeto(projeto.nomeProjeto)' height="75"> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Status
+    </th>
+    <td mat-cell *matCellDef="let projeto"> {{projeto.status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="responsavel" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Responsavel</th>
+    <td mat-cell *matCellDef="let projeto"> {{projeto.responsavel}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="equipe" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Equipe </th>
+    <td mat-cell *matCellDef="let projeto"> {{projeto.equipe}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="buttonEditar">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let projeto"> 
+        <button mat-raised-button color="primary" (click)="editarProjeto(projeto.nomeProjeto)">EDITAR</button>
+    </td>    
+  </ng-container>
+
+  <ng-container matColumnDef="buttonExcluir">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let projeto"> 
+        <button mat-raised-button color="primary" (click)="openDialogDeletaProjeto(projeto.nomeProjeto)">EXCLUIR</button>
+    </td>    
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef= "['codigo', 'prioridade2','nomeProjeto', 'image', 'status' , 'responsavel', 'equipe' , 'buttonEditar', 'buttonExcluir']"></tr>
+
+  <tr mat-row [style.height]="'75px'" [style.border-bottom]="'2px solid black'" *matRowDef="let row; columns: ['codigo', 'prioridade2', 'nomeProjeto', 'image', 'status', 'responsavel', 'equipe' , 'buttonEditar', 'buttonExcluir']" [ngClass]="{'green': row.status == 'Ativo', 'yellow': row.status == 'StandBy'}" ></tr>
+
+</table>

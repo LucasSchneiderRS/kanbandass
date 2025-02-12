@@ -1,0 +1,32 @@
+<body>
+    <div class="mb-3 mt-3 tarefa">
+        <label class="form-label">Nome Tarefa:</label>
+        <input class="form-control" placeholder="Nome da tarefa" [formControl]="nomeTarefa">
+    </div>
+    
+    <form>
+        <label for="browser" class="form-label tarefa">Responsável:</label>
+        <select class="form-select form-select-lg tarefa" [formControl]="responsavel">
+            <option *ngFor="let equipe of listaEquipe">{{equipe}}</option>
+        </select>
+    </form>
+    
+    <label for="comment" class="tarefa escrita">Descrição:</label>
+    <textarea class="form-control tarefa" rows="5" id="comment" name="text" [formControl]="descricao"></textarea>
+    
+    <p class="escrita">Data Entrega:</p>
+    
+    
+    <div class="input-group tarefa">
+                <input [(ngModel)]="model"
+                    class="form-control"
+                    name="dp"
+                    ngbDatepicker
+                    #d="ngbDatepicker"
+                />
+                <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+    </div>
+    
+    <button class="button" mat-raised-button (click)="gravaTarefa()" color="primary">Gravar Tarefa</button>
+
+</body>

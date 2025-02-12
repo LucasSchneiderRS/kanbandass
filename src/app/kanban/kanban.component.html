@@ -1,0 +1,122 @@
+
+
+    <div class="d-flex justify-content-between align-self-center title">
+        <div class="projeto">
+            <button class="buttonTarefa" mat-raised-button (click)="novaTarefa()" color="primary">Nova Tarefa</button>
+            <img [src]='getJpgNomeProjeto()' height="75">
+            <span> Projeto: {{Projeto}} </span>
+        </div>
+        <div class="align-self-center">
+            <button class="buttonHoras" mat-raised-button (click)="controleHoras()" color="primary">Controle de Horas</button>
+        </div>
+    </div>
+
+
+<mat-divider class="divider"></mat-divider>
+
+<div cdkDropListGroup>
+<div class="coluna" id="backlog">
+    <h2>Backlog</h2>
+    <div
+    cdkDropList
+    id = "{{Tarefas[0]}}"
+    [cdkDropListData]="Tarefas[0]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of Tarefas[0]; index as index" cdkDrag>
+        
+        <mat-card class="card" (click)="openDialog(item, 0, index)">
+            <mat-card-title>{{item.nomeTarefa}}</mat-card-title>
+            <mat-card-content>
+              <p>{{item.descricao}}</p>
+              <mat-divider></mat-divider>
+              <p>Responsável: {{item.responsavel}}</p>
+              <mat-divider></mat-divider>
+              <p>Data Entrega: {{item.dataEntrega | date:'d/M/yy'}}</p>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+    </div>
+</div>
+
+<div class="coluna" id="impedimento">
+    <h2>Impedimento</h2>
+    <div
+    cdkDropList
+    id = "{{Tarefas[1]}}"
+    [cdkDropListData]="Tarefas[1]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of Tarefas[1]; index as index" cdkDrag>
+
+        <mat-card class="card" (click)="openDialog(item, 1, index)">
+            <mat-card-title>{{item.nomeTarefa}}</mat-card-title>
+            <mat-card-content>
+                <p>{{item.descricao}}</p>
+                <mat-divider></mat-divider>
+                <p>Responsável: {{item.responsavel}}</p>
+                <mat-divider></mat-divider>
+                <p>Data Entrega: {{item.dataEntrega | date:'d/M/yy'}}</p>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+    </div>
+</div>
+
+<div class="coluna" id="fazendo">
+    <h2>Fazendo</h2>
+    <div
+    cdkDropList
+    id = "{{Tarefas[2]}}"
+    [cdkDropListData]="Tarefas[2]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of Tarefas[2]; index as index" cdkDrag>
+
+        <mat-card class="card" (click)="openDialog(item, 2, index)">
+            <mat-card-title>{{item.nomeTarefa}}</mat-card-title>
+            <mat-card-content>
+                <p>{{item.descricao}}</p>
+                <mat-divider></mat-divider>
+                <p>Responsável: {{item.responsavel}}</p>
+                <mat-divider></mat-divider>
+                <p>Data Entrega: {{item.dataEntrega | date:'d/M/yy'}}</p>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+    </div>
+</div>
+
+<div class="coluna" id="concluido"> 
+    <h2>Concluído</h2>
+    <div
+    cdkDropList
+    id = "{{Tarefas[3]}}"
+    [cdkDropListData]="Tarefas[3]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of Tarefas[3]; index as index" cdkDrag>
+
+        <mat-card class="card" (click)="openDialog(item, 3, index)">
+            <mat-card-title>{{item.nomeTarefa}}</mat-card-title>
+            <mat-card-content>
+              <p>{{item.descricao}}</p>
+              <mat-divider></mat-divider>
+              <p>Responsável: {{item.responsavel}}</p>
+              <mat-divider></mat-divider>
+              <p>Data Entrega: {{item.dataEntrega | date:'d/M/yy'}}</p>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+  
+  

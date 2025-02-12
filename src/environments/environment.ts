@@ -3,8 +3,23 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  firebase: {
+    projectId: 'dass-kanban',
+    appId: '1:131193703141:web:f58c44997d7e64c5e6e20c',
+    databaseURL: 'https://dass-kanban-default-rtdb.firebaseio.com',
+    storageBucket: 'dass-kanban-default1.appspot.com',
+    apiKey: 'AIzaSyCopjN0g-8mH0VR0huyYJxQdgDGJG4GBP4',
+    authDomain: 'dass-kanban.firebaseapp.com',
+    messagingSenderId: '131193703141',
+    measurementId: 'G-FD4XGVDV45',
+  },
+  production: false,
+  projeto: "dass-kanban",
+  equipe: [""],
+  user : "semlogin"
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
